@@ -36,12 +36,14 @@ My solution was to just add an extra 0f argument, making it new Color(v,v,v,0f) 
 Part 3 of flag : **_sn4ekk}**
 
 **Part 2**
+
 Part 2 wasn't as obvious. There was nothing in the code that referenced it.
 I downloaded another application called Unity Assets Bundle Extractor which allowed me to view resources.
-![](https://i.gyazo.com/7b1de77998bfaeab48d2eec938d7c4c0.png
+![](https://i.gyazo.com/7b1de77998bfaeab48d2eec938d7c4c0.png)
 I noticed 4 sound files, which was weird because only 3 played in the game. 
 Looking into the SoundManager class, we can see that sounds used are loaded into an array `sounds` and also the play method
 which would play sounds based off a string name given. 
+
 ![](https://i.gyazo.com/d864344efcc8109e97d5fa8bdd156618.png)
 
 To get the name of the sound I changed code in the TickUpdate Method in the SnakeMovement class to do things when I ran into fruit.
@@ -53,6 +55,7 @@ to
 ```c#
 this.fruitColleced++;
 this.fruitScoreText.text = this.soundManager.sounds[3].name;
+```
 ![](https://i.gyazo.com/701076daeeae8fa09ac6dfa958a39370.png)
 We can then play the sound with
 ```c#
