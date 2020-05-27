@@ -39,7 +39,9 @@ Part 3 of flag : **_sn4ekk}**
 
 Part 2 wasn't as obvious. There was nothing in the code that referenced it.
 I downloaded another application called Unity Assets Bundle Extractor which allowed me to view resources.
+
 ![](https://i.gyazo.com/7b1de77998bfaeab48d2eec938d7c4c0.png)
+
 I noticed 4 sound files, which was weird because only 3 played in the game. 
 Looking into the SoundManager class, we can see that sounds used are loaded into an array `sounds` and also the play method
 which would play sounds based off a string name given. 
